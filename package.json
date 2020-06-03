@@ -13,10 +13,13 @@
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
+    "@babel/runtime": "^7.10.2",
+    "@babel/runtime-corejs3": "^7.10.2",
     "core-js": "^3.6.5"
   }
 }
