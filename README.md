@@ -58,8 +58,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     [
       "@babel/preset-env",
       {
-      "useBuiltIns": "usage" ,
-      "corejs":3
+      // "useBuiltIns": "usage" ,
+      // "corejs":3
       }
     ]
   ],
@@ -67,7 +67,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     [
       "@babel/plugin-transform-runtime",
       {
-        // "corejs":3
+        "corejs":3
       }
     ]
   ]
