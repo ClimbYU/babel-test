@@ -50,7 +50,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 ```
-@babel/plugin-transform-runtime是一个可以重复使用babel注入的程序。@babel/plugin-transform-runtime 需要和 @babel/runtime 配合使用。
+@babel/plugin-transform-runtime是一个可以重复使用babel注入的程序。@babel/plugin-transform-runtime 需要和 @babel/runtime 配合使用。使用@babel/plugin-transform-runtime 与@babel/runtime构建出来的代码如下
+```javascript
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+
+```
 
 使用@babel/plugin-transform-runtime构建出来的代码对于一些新特性如：promise，include会污染原型，如果需要不污染原型可以可以使用@babel/runtime-corejs3，@babel/runtime-corejs3默认会按需引入polyfill。此时预设需要去掉useBuiltIns
 ```javascript
