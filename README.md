@@ -27,6 +27,7 @@
 
 ###   @babel/runtime 与 @babel/plugin-transform-runtime 
 对于一些新的特性如class，每个使用了新特性的地方都会注入一份_classCallCheck、_defineProperties、_createClass这些方法,随着文件的增多这些方法会被重复注入多次，@babel/plugin-transform-runtime 就是未解决这个问题而生
+
 index.js
 ```javascript
 
