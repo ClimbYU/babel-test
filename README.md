@@ -62,6 +62,40 @@ var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/creat
 ```
 
 使用@babel/plugin-transform-runtime构建出来的代码对于一些新特性如：promise，include会污染原型，如果需要不污染原型可以可以使用@babel/runtime-corejs3，@babel/runtime-corejs3默认会按需引入polyfill。此时预设需要去掉useBuiltIns
+
+使用corje3之前构建出的代码
+```javascript
+
+require("core-js/modules/es.array.includes");
+
+require("core-js/modules/es.object.to-string");
+
+require("core-js/modules/es.promise");
+
+var b = [1, 2, 4, 455, 5].includes(4);
+console.log(_index.default);
+var p = new Promise(function (resolve, reject) {
+  resolve(100);
+});
+
+```
+
+使用corjs3之后构建出代码
+```javascript
+
+var _promise = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/promise"));
+
+var _includes = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/instance/includes"));
+
+
+var b = (0, _includes.default)(_context = [1, 2, 4, 455, 5]).call(_context, 4);
+console.log(_index.default);
+var p = new _promise.default(function (resolve, reject) {
+  resolve(100);
+});
+
+```
+babelrc配置如下
 ```javascript
 {
   "presets": [
